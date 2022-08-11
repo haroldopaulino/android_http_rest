@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Http Rest</string>
+    <string name="back">Back</string>
+    <string name="ok">OK</string>
+    <string name="error">Error</string>
+
+    <string-array name="http_methods">
+        <item>GET</item>
+        <item>POST</item>
+        <item>OPTIONS</item>
+        <item>HEAD</item>
+        <item>PUT</item>
+        <item>DELETE</item>
+        <item>TRACE</item>
+    </string-array>
+</resources>

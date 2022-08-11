@@ -1,0 +1,625 @@
+body {
+	height:100%;
+	width:90%;
+	margin:0px;
+	font-family: 'PT Sans', sans-serif;
+	font-size:20px;
+	color:#FFFFFF;
+	text-align:left;
+	padding:30px 20px 0 20px;
+}
+
+body *[inlineBlock] {
+	display:inline-block;
+}
+
+body *[displayNone] {
+	display:none;
+}
+
+body *[displayNoneI] {
+	display:none !important;
+}
+
+body *[bold] {
+	font-weight:bold;
+}
+
+body *[italic] {
+	font-style:italic;
+}
+
+body *[underline] {
+	text-decoration: underline;
+}
+
+body *[padding] {
+	padding:5px !important;
+}
+
+body *[padding20] {
+	padding:20px !important;
+}
+
+body *[padding50] {
+	padding:50px !important;
+}
+
+body *[paddingTop20] {
+	padding-top:20px !important;
+}
+
+body *[paddingTop50] {
+	padding-top:50px !important;
+}
+
+body *[paddingBottom5] {
+	padding-bottom:15px !important;
+}
+
+body *[noPadding] {
+	padding:0px !important;
+}
+
+body *[noLeftPadding] {
+	padding-left:0px !important;
+}
+
+body *[noTopPadding] {
+	padding-top:0px !important;
+}
+
+body *[margin] {
+	margin:5px !important;
+}
+
+body *[noMargin] {
+	margin:0px !important;
+}
+
+body *[marginBottom] {
+	margin-bottom:50px !important;
+}
+
+body *[normalLineHeight] {
+	line-height:normal !important;
+}
+
+body *[lineHeight10] {
+	line-height:10px !important;
+}
+
+body *[lineHeight30] {
+	line-height:30px !important;
+}
+
+body *[height20] {
+	height:20px !important;
+}
+
+body *[height25] {
+	height:25px !important;
+}
+
+body *[height40] {
+	height:40px !important;
+}
+
+body *[height60] {
+	height:60px !important;
+}
+
+body *[height80] {
+	height:80px !important;
+}
+
+body *[height100] {
+	height:100px !important;
+}
+
+body *[height300] {
+	height:300px !important;
+}
+
+body *[height300NotImportant] {
+	height:300px;
+}
+
+body *[fullHeight] {
+	height:100% !important;
+}
+
+body *[fullWidth] {
+	width:100% !important;
+}
+
+body *[lowercase] {
+	text-transform: lowercase;
+}
+
+body *[center] {
+	text-align:center !important;
+}
+
+body *[left] {
+	text-align:left !important;
+}
+
+body *[left20] {
+	text-align:left !important;
+	padding-left:20px !important;
+}
+
+body *[right] {
+	text-align:right !important;
+}
+
+body *[right20] {
+	text-align:right !important;
+	padding-right:20px !important;
+}
+
+body *[bottom] {
+	vertical-align:bottom !important;
+}
+
+body *[middle] {
+	vertical-align:middle !important;
+}
+
+body *[floatLeft] {
+	float:left !important;
+}
+
+body *[floatRight] {
+	float:right !important;
+}
+
+body *[pointer] {
+	cursor:pointer !important;
+}
+
+body *[move] {
+	cursor:move !important;
+}
+
+body *[font12] {
+	font-size:12px;
+	color:#FFFFFF !important;
+	text-decoration:none;
+}
+
+body *[font14] {
+	font-size:14px;
+	color:#FFFFFF !important;
+	text-decoration:none;
+}
+
+body *[font16] {
+	font-size:16px;
+	color:#FFFFFF !important;
+	text-decoration:none;
+}
+
+body *[font18] {
+	font-size:18px;
+	color:#FFFFFF !important;
+	text-decoration:none;
+}
+
+body *[font20] {
+	font-size:20px;
+	color:#FFFFFF !important;
+	text-decoration:none;
+}
+
+body *[font25] {
+	font-size:30px;
+	color:#FFFFFF !important;
+	text-decoration:none;
+}
+
+body *[font30] {
+	font-size:30px;
+	color:#FFFFFF !important;
+	text-decoration:none;
+}
+
+body *[font32] {
+	font-size:32px;
+	color:#FFFFFF !important;
+	text-decoration:none;
+}
+
+body *[font40] {
+	font-size:40px;
+	color:#FFFFFF !important;
+	text-decoration:none;
+}
+
+body *[font60] {
+	font-size:60px;
+	color:#FFFFFF !important;
+	text-decoration:none;
+	line-height:65px;
+}
+
+body *[blackColor] {
+	color:#000000 !important;
+}
+
+body *[whiteColor] {
+	color:#FFFFFF !important;
+}
+
+body *[opacity1] {
+	-moz-opacity: 1;
+	opacity: 1.00;
+	-khtml-opacity: 1;
+}
+
+body *[opacity9] {
+	-moz-opacity: 0.9;
+	opacity: 0.90;
+	-khtml-opacity: 0.9;
+}
+
+body *[opacity7] {
+	-moz-opacity: 0.7;
+	opacity: 0.70;
+	-khtml-opacity: 0.7;
+}
+
+body *[opacity5] {
+	-moz-opacity: 0.5;
+	opacity: 0.50;
+	-khtml-opacity: 0.5;
+}
+
+body *[relative] {
+	position:relative;
+}
+
+body *[absolute] {
+	position:absolute;
+}
+
+body *[nowrap] {
+	white-space:nowrap;
+}
+
+body *[blueFont] {
+	color:#0000FF !important;
+}
+
+body *[lightBlueFont] {
+	color:#0099FF !important;
+}
+
+body *[lightBlueFont] {
+	color:#CCFFFF !important;
+}
+
+body *[darkFont] {
+	color:#222222 !important;
+}
+
+body *[lightGrayFont] {
+	color:#C1C1C1 !important;
+}
+
+body *[redFont] {
+	color:#A00000 !important;
+}
+
+body *[blueBorder] {
+	border:1px solid #1FBAD6 !important;
+}
+
+body *[lightGrayBorder] {
+	border:1px solid #C1C1C1 !important;
+	background-color:#F9F9F9 !important;
+	border-radius:10px;
+}
+
+body *[grayBorder] {
+	border:1px solid #636366 !important;
+	border-radius:10px;
+}
+
+body *[grayBorderTop] {
+	border-top:1px solid #636366 !important;
+}
+
+body *[lightGrayBorderTop] {
+	border-top:1px solid #DDDDDD !important;
+}
+
+body *[noBorderRadius] {
+	border-radius: 0px;
+}
+
+body *[whiteBackground] {
+	background-color:#FFFFFF !important;
+}
+
+body *[grayBackground] {
+	background-color:#EEEEEE !important;
+}
+
+body *[grayBorderBottom] {
+	border-bottom:1px solid #636366 !important;
+}
+
+body *[blackHorLine] {
+	height:0px !important;
+	padding:0px !important;
+	border:3px solid #000000 !important;
+	border-radius:5px !important;
+	margin:10px 0 10px 0 !important;
+}
+
+body *[hover1]:hover {
+	color:#1FBAD6 !important;
+	background-color:rgba(0,0,0,0.3) !important;
+}
+
+body *[hover1]:hover a {
+	color:#1FBAD6 !important;
+}
+
+body *[hover2]:hover {
+	color:#1FBAD6 !important;
+}
+
+body *[hover3]:hover {
+	color:#1FBAD6 !important;
+	background-color:rgba(0,0,0,0.3) !important;
+}
+
+body *[hover3]:hover a {
+	color:#1FBAD6 !important;
+}
+
+body *[buttonMobile] {
+	border-radius:5px;
+	border:3px solid #1FBAD6 !important;
+	line-height:35px;
+	color:#FFFFFF;
+	background-color:#000000;
+	font-size:25px;
+	text-transform:uppercase;
+	padding:5px 12px 5px 12px;
+	cursor:pointer;
+}
+
+body *[buttonMobile] a {
+	color:#FFFFFF;
+	background-color:#000000;
+	text-transform:uppercase;
+	cursor:pointer;
+	text-decoration:none;
+}
+
+body *[button1] {
+	border-radius:5px;
+	border:3px solid #1FBAD6 !important;
+	line-height:20px;
+	color:#FFFFFF;
+	background-color:#000000;
+	font-size:16px;
+	/*text-transform:uppercase;*/
+	padding:5px 12px 5px 12px;
+	margin:5px;
+}
+
+body *[button1] a {
+	color:#FFFFFF;
+	background-color:#000000;
+	text-transform:uppercase;
+	cursor:pointer;
+	text-decoration:none;
+}
+
+body *[button2] {
+	background-color: #1e9bda;
+    background: -webkit-linear-gradient(#3caee7, #08c);
+    background: linear-gradient(#3caee7, #08c);
+    border-color: #137ec6;
+    border-top-color: #1992da;
+    border-bottom-color: #0d6ab2;
+    color: #fff;
+    font-size: 13px;
+    line-height:10px;
+    height: 32px;
+	border-radius:5px;
+	text-transform:uppercase;
+	/* padding:5px 12px 5px 12px;*/
+	cursor:pointer;
+}
+
+body *[button2] a {
+	color:#FFFFFF;
+	background-color:#000000;
+	text-transform:uppercase;
+	cursor:pointer;
+	text-decoration:none;
+}
+
+body *[inactiveButton1] {
+	border-radius:5px;
+	border:3px solid #999999 !important;
+	line-height:20px;
+	color:#777777;
+	background-color:#EEEEEE;
+	font-size:16px;
+	text-transform:uppercase;
+	padding:5px 12px 5px 12px;
+	cursor:default;
+}
+
+body *[space] {
+	width:25px !important;
+}
+
+body *[input1] {
+	border:1px solid #AAAAAA;
+	border-radius:5px;
+	padding:6px;
+	font-size:16px;
+	vertical-align:top;
+	font-family: 'PT Sans', sans-serif !important;
+}
+
+body *[inputMobile] {
+	font-size:40px !important;
+}
+
+body *[requiredField] {
+   padding-left: 18px;
+   background-image: url("file:///android_asset/required_field.png");
+   background-repeat: no-repeat;
+   background-position: left top;
+}
+
+.mainPageMenu {
+	position:absolute;
+	text-align:center;
+	width:470px;
+	height:880px;
+	background-image: url("file:///android_asset/pattern1.jpg");
+    background-repeat: repeat;
+	color:#FFFFFF;
+	overflow:hidden;
+	border:1px solid gray;
+}
+
+.contentsContainer {
+	width:1000px;
+	padding:50px;
+}
+
+.mainContainer {
+	display:inline-block;
+	width:1000px;
+	height:100%;
+	margin:60px 0px 60px 0px;
+	background-image:url("file:///android_asset/background3.png");
+	background-repeat:repeat;
+}
+
+.alignLeft {
+	text-align:left;
+}
+
+.alignCenter {
+	text-align:center;
+}
+
+.alignRight {
+	text-align:right;
+}
+
+.alignMiddle {
+	vertical-align:middle;
+}
+
+.alignTop {
+	vertical-align:top;
+}
+.relative {
+ 	position:relative;
+}
+ 
+.absolute {
+ 	position:absolute;
+}
+ 
+.inlineBlock {
+ 	display:inline-block;
+}
+
+.table1 {
+    display:table;
+}
+
+.table1 > div {
+     display:table-row;
+     text-align:left;
+}
+
+.table1 > div > div {
+	display:table-cell;
+	border:0px;
+	padding:5px;
+}
+
+.table1 *[border1] {
+	border:1px solid #AAAAAA;
+}
+
+.table1 *[font12] {
+	font-size:12px;
+}
+
+.table1 *[hover1]:hover {
+	background-color:yellow;
+	font-weight:bold;
+	cursor:pointer;
+}
+
+.table1 > div > div > input[type=text],input[type=number],input[type=password],textarea,select {
+	border:1px solid #AAAAAA;
+	border-radius:5px;
+	padding:6px;
+	font-size:18px;
+	vertical-align:top;
+	/*THESE SETTINGS FIX THE MESS CAUSED BY THE JQUERY UI TABS INNER ELEMENTS, WHICH INHERIT ui-widget*/
+	font-family: 'PT Sans', sans-serif !important;
+}
+
+.table1 > div > div > textarea {
+	height:40px;
+	resize:vertical;
+}
+
+.table1 > div > div > input[type=button] {
+	padding:10px 15px 10px 15px;
+	/*THESE SETTINGS FIX THE MESS CAUSED BY THE JQUERY UI TABS INNER ELEMENTS, WHICH INHERIT ui-widget*/
+	font-family: 'PT Sans', sans-serif !important;
+	font-size:14px;
+}
+
+.table1 > div > div {
+	vertical-align:top;
+}
+
+.table1 > div > div > span {
+	display:inline-block;
+	vertical-align:top;
+	margin-top:5px;
+	/*THESE SETTINGS FIX THE MESS CAUSED BY THE JQUERY UI TABS INNER ELEMENTS, WHICH INHERIT ui-widget*/
+	font-family: 'PT Sans', sans-serif !important;
+	font-size:14px;
+}
+
+.table1 > div > div > div[font12],span[font12],input[font12],textarea[font12],select[font12] {
+	font-size:12px;
+}
+
+.inputField1 {
+	border:1px solid #AAAAAA;
+	border-radius:5px;
+	padding:6px;
+	font-size:16px;
+	vertical-align:top;
+	font-family: 'PT Sans', sans-serif !important;
+}
+
+.mainFieldWidth {
+	width:830px;
+}
+
+.mainFieldWidth2 {
+	width:806px;
+}
