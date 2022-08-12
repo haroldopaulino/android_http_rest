@@ -1,6 +1,6 @@
 # HTTP Rest - Android App
 
-Development Overview - *Native Android App – Java, XML, SQLite*
+Development Overview -> *Native Android App – Java, XML, SQLite*
 
 It’s an HTTP/REST client app.
 
@@ -12,7 +12,7 @@ It uses SQLite to store any entered data, so to remember for future usage. Multi
 
 This was quite a fun project to work on, besides, it makes my daily job that much easier too.
 
-https://play.google.com/store/apps/details?id=com.http_s.rest
+[Play Store -> HTTP REST](https://play.google.com/store/apps/details?id=com.http_s.rest)
 
 ![01](https://user-images.githubusercontent.com/28379115/184137708-b574734f-6f71-4884-807d-2ba11c690b43.jpg)
 ![02](https://user-images.githubusercontent.com/28379115/184137717-4066e2fd-ea39-4ea8-816d-cfd8cfa87fe9.jpg)
