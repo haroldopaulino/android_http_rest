@@ -1,10 +1,12 @@
 # HTTP Rest - Android App
 
-Development Overview -> *Native Android App – Java, XML, SQLite*
+Development Overview -> *Native Android App – Java, XML, SQLite, Apache, MySQL, PHP*
 
 It’s an HTTP/REST client app.
 
 I needed a tool to help me test some REST api calls, so I've created this app.
+
+I used native Java and XML layouts to develop this project, and I’ve created all image assets using Corel Draw.
 
 You can add variables and headers, including an option to automatically appending your GPS location to the variables. In return, you get a generous summary with a detailed summary, along with timeframe, headers, byte size and so forth.
 
