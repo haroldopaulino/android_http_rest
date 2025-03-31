@@ -3,18 +3,23 @@
     android:id="@+id/outerLinearLayout"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:background="#00ffffff"
-    android:paddingLeft="10dp"
+    android:background="#ffffff"
+    android:divider="#ffffff"
+    android:showDividers="middle"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
     android:layout_height="80dp">
 
     <TextView
         android:id="@+id/spinnerTextview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center|left"
-        android:paddingLeft="10dp"
-        android:paddingRight="50dp"
+        android:layout_height="60dp"
+        android:gravity="center|start"
+        android:paddingStart="10dp"
+        android:paddingEnd="50dp"
         android:text="ASD FSADF ASDF"
         android:textColor="#FFFFFF"
-        android:textSize="18dip" />
+        android:background="@color/backgroundMix1"
+        android:backgroundTint="@color/backgroundMix1"
+        android:textSize="18sp" />
 </LinearLayout>

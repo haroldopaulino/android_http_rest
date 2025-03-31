@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Http Rest</string>
+    <string name="back">Voltar</string>
+    <string name="ok">OK</string>
+    <string name="error">Erro</string>
+    <string name="fetching_location">A obter localização</string>
+    <string name="my_latitude">"Minha latitude: "</string>
+    <string name="my_longitude">"Minha longitude: "</string>
+    <string name="my_latitude_nmy_longitude">Minha latitude: ...\nMinha longitude: ...</string>
+    <string name="add_variable">Adicionar variável</string>
+    <string name="variables">Adicionar variáveis</string>
+    <string name="add">Adicionar</string>
+    <string name="headers">Adicionar cabeçalhos</string>
+    <string name="enter_url">Inserir URL</string>
+    <string name="https_sparqm_com_http_rest_gateway_php">https://sparqm.com/web/http_rest/gateway.php</string>
+    <string name="method">Método</string>
+    <string name="http_rest_client">Cliente HTTP REST</string>
+    <string name="menu">Menu</string>
+    <string name="send_request">ENVIAR REQUISIÇÃO</string>
+    <string name="url">URL</string>
+    <string name="location_not_available">Localização não disponível</string>
+    <string name="delete_this_item">Eliminar este item</string>
+    <string name="value">valor</string>
+    <string name="key">chave</string>
+    <string name="main_menu">Menu principal</string>
+    <string name="close">Fechar</string>
+    <string name="settings">Definições</string>
+    <string name="language">Idioma</string>
+    <string name="add_my_current_gps_location_to_my_variables_namely_latitude_and_longitude">Adicionar a minha localização GPS atual às minhas variáveis, chamadas 'latitude' e 'longitude'</string>
+    <string name="encode_get_s_query_string_with_base64">Codificar a string de consulta GET com Base64</string>
+    <string name="encode_get_values_not_keys_with_base64">Codificar os valores GET (não as chaves) com Base64</string>
+    <string name="encode_post_values_not_keys_with_base64">Codificar os valores POST (não as chaves) com Base64</string>
+    <string name="privacy_policy">Política de privacidade</string>
+    <string name="view">Ver</string>
+    <string name="about">Sobre</string>
+    <string name="response">Resposta</string>
+    <string name="location_permission_denied">Permissão de localização negada</string>
+
+    <string-array name="http_methods">
+        <item>GET</item>
+        <item>POST</item>
+        <item>OPTIONS</item>
+        <item>HEAD</item>
+        <item>PUT</item>
+        <item>DELETE</item>
+        <item>TRACE</item>
+    </string-array>
+</resources>

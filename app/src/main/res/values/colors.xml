@@ -2,7 +2,16 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryText">#ffffff</color>
     <color name="colorAccent">#ffffff</color>
+    <color name="colorBackground">#ffffff</color>
+    <color name="white">#ffffff</color>
+    <color name="white_opacity_100">#00ffffff</color>
+    <color name="colorSecondary">#ffffff</color>
     <color name="inactiveTabButton">#22000000</color>
     <color name="activeTabButton">#66000000</color>
+    <color name="backgroundMix1">#ff6c80a1</color>
+    <color name="backgroundMix2">#ff060c26</color>
+    <color name="backgroundMix3">#ff6986a8</color>
+    <color name="backgroundMix4">#ff5f6d90</color>
 </resources>

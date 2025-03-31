@@ -6,6 +6,7 @@
     android:orientation="vertical"
     android:weightSum="1"
     android:padding="15dp"
+    android:background="@drawable/main_background"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -24,6 +25,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
+                android:contentDescription="@string/main_menu"
                 android:src="@drawable/menu"
                 android:id="@+id/menuImageView"/>
 
@@ -33,16 +35,16 @@
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="right"
+            android:gravity="end"
             android:textSize="25sp"
-            android:text="HTTP REST Client" />
+            android:text="@string/http_rest_client" />
 
     </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Method" />
+        android:text="@string/method" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -52,14 +54,16 @@
 
         <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:background="@drawable/white_border_transparent_box">
+            android:layout_height="wrap_content">
 
             <Spinner
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="60dp"
                 android:id="@+id/methodSpinner"
-                android:entries="@array/http_methods">
+                android:entries="@array/http_methods"
+                android:background="@drawable/white_round_corners_blue_background_shape"
+                android:popupBackground="@drawable/spinner_background"
+                android:spinnerMode="dropdown">
             </Spinner>
 
         </FrameLayout>
@@ -70,9 +74,11 @@
 
         <EditText
             style="@style/edit_text"
-            android:hint="URL"
+            android:autofillHints="@string/url"
+            android:hint="@string/url"
             android:id="@+id/urlEditText"
-            android:text="https://haroldopaulino.com/http_rest/gateway.php"/>
+            android:inputType="textUri|textMultiLine"
+            android:text="@string/https_sparqm_com_http_rest_gateway_php"/>
 
     </LinearLayout>
 
@@ -93,7 +99,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/headersCheckBox"
-                android:text="Headers">
+                android:text="@string/headers">
             </CheckBox>
 
             <LinearLayout
@@ -108,9 +114,9 @@
             <Button
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
                 android:background="@drawable/add"
                 android:id="@+id/addHeaderButton"
                 android:visibility="gone"/>
@@ -119,7 +125,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/variablesCheckBox"
-                android:text="Variables">
+                android:text="@string/variables">
             </CheckBox>
 
             <Space
@@ -138,9 +144,9 @@
             <Button
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
                 android:background="@drawable/add"
                 android:id="@+id/addVariableButton"
                 android:visibility="gone"/>
@@ -150,8 +156,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:gravity="left"
-                android:text="My Latitude: ...\nMy Longitude: ..."
+                android:gravity="start"
+                android:text="@string/my_latitude_nmy_longitude"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -163,13 +169,13 @@
         android:layout_height="wrap_content"
         android:paddingTop="20dp">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            style="@style/button_3"
             android:id="@+id/sendButton"
-            android:textSize="20sp"
-            android:text="SEND REQUEST"/>
+            android:text="@string/send_request"/>
 
     </FrameLayout>
 

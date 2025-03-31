@@ -9,7 +9,9 @@
     <EditText
         style="@style/key_value_edit_text"
         android:id="@+id/nameEditText"
-        android:hint="key"/>
+        android:autofillHints="@string/key"
+        android:inputType="text"
+        android:hint="@string/key"/>
 
     <Space
         android:layout_width="20dp"
@@ -18,7 +20,9 @@
     <EditText
         style="@style/key_value_edit_text"
         android:id="@+id/valueEditText"
-        android:hint="value"/>
+        android:autofillHints="@string/value"
+        android:inputType="text"
+        android:hint="@string/value"/>
 
     <FrameLayout
         android:layout_width="50dp"
@@ -30,6 +34,7 @@
             android:layout_height="35dp"
             android:layout_gravity="center"
             android:id="@+id/deleteImageView"
+            android:contentDescription="@string/delete_this_item"
             android:src="@drawable/trash"/>
 
     </FrameLayout>
