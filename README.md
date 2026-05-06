@@ -4,6 +4,8 @@ Android HTTP REST Client is a modern Android application for manually testing HT
 
 The behavior: choose an HTTP method, enter a URL, optionally add headers, optionally add variables, optionally include the current device latitude and longitude, optionally Base64-encode outgoing values, send the request, and review the response details.
 
+<img width="2437" height="1334" alt="http_rest" src="https://github.com/user-attachments/assets/3778ffc6-0bd6-42af-a5f9-866a130b8d10" />
+
 ## Technical summary
 
 | Area | Implementation |
