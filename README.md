@@ -1,6 +1,6 @@
 # Android HTTP REST Client
 
-Android HTTP REST Client is a modern Android application for manually testing HTTP endpoints from an Android device. The project has been refactored from a legacy XML/AppCompat implementation into a Jetpack Compose application using Material 3, a dark theme, and an MVI-style presentation layer.
+Android HTTP REST Client is a modern Android application for manually testing HTTP endpoints from an Android device. The project is a Jetpack Compose application using Material 3, a dark theme, and an MVI-style presentation layer.
 
 The behavior: choose an HTTP method, enter a URL, optionally add headers, optionally add variables, optionally include the current device latitude and longitude, optionally Base64-encode outgoing values, send the request, and review the response details.
 
