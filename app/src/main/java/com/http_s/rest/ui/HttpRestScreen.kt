@@ -60,6 +60,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import com.http_s.rest.BuildConfig
 import com.http_s.rest.mvi.HttpRestIntent
 import com.http_s.rest.mvi.HttpRestSettings
 import com.http_s.rest.mvi.HttpRestState
@@ -79,7 +80,7 @@ fun HttpRestScreen(
                     Column {
                         Text("HTTP REST Client", maxLines = 1, overflow = TextOverflow.Ellipsis)
                         Text(
-                            "Compose • Material 3 • MVI",
+                            "Live Endpoint Testing",
                             style = MaterialTheme.typography.labelMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
@@ -188,7 +189,7 @@ fun HttpRestScreen(
     if (state.response != null) ResponseDialog(state.response, onDismiss = { onIntent(HttpRestIntent.DismissResponse) })
     if (state.errorMessage != null) ErrorDialog(state.errorMessage, onDismiss = { onIntent(HttpRestIntent.DismissError) })
     if (state.showPrivacyPolicy) TextDialog("Privacy Policy", state.privacyPolicy, onDismiss = { onIntent(HttpRestIntent.ClosePrivacyPolicy) })
-    if (state.showAbout) TextDialog("About", "HTTP REST Client\n\nRefactored with Jetpack Compose, Material 3, and MVI state management.", onDismiss = { onIntent(HttpRestIntent.CloseAbout) })
+    if (state.showAbout) TextDialog("About", "HTTP REST Client\nVersion ${BuildConfig.VERSION_NAME}\n\nRefactored with Jetpack Compose, Material 3, and MVI state management.", onDismiss = { onIntent(HttpRestIntent.CloseAbout) })
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
