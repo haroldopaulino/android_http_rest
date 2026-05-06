@@ -1,39 +1,60 @@
-apply plugin: 'com.android.application'
-apply plugin: 'org.jetbrains.kotlin.android'
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.plugin.compose'
+}
 
 android {
-    compileSdk 35
+    namespace 'com.http_s.rest'
+    compileSdk 36
+
     defaultConfig {
-        applicationId "com.http_s.rest"
+        applicationId 'com.http_s.rest'
         minSdk 23
-        targetSdk 35
-        versionCode 9
-        versionName "9"
+        targetSdk 36
+        versionCode 10
+        versionName '10.0'
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
+
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    namespace 'com.http_s.rest'
-    kotlinOptions {
-        jvmTarget = '1.8'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
+    }
+
+    buildFeatures {
+        compose true
+    }
+
+    kotlin {
+        jvmToolchain(21)
     }
 }
 
 dependencies {
-    api fileTree(dir: 'libs', include: ['*.jar'])
-    api 'androidx.appcompat:appcompat:1.7.0'
-    api 'androidx.legacy:legacy-support-v4:1.0.0'
-    api 'androidx.constraintlayout:constraintlayout:2.2.1'
-    api 'com.google.code.gson:gson:2.11.0'
-    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.22"))
-    implementation 'com.google.android.material:material:1.12.0'
-    implementation 'androidx.core:core-ktx:1.15.0'
+    implementation platform('androidx.compose:compose-bom:2026.04.01')
+    implementation 'androidx.activity:activity-compose:1.11.0'
+    implementation 'androidx.compose.material3:material3'
+    implementation 'androidx.compose.material:material-icons-extended'
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.compose.ui:ui-tooling-preview'
+    debugImplementation 'androidx.compose.ui:ui-tooling'
+    debugImplementation 'androidx.compose.ui:ui-test-manifest'
+    implementation 'androidx.core:core-ktx:1.17.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-compose:2.9.4'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.9.4'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.4'
+    implementation 'com.google.code.gson:gson:2.13.2'
     implementation 'com.google.android.gms:play-services-location:21.3.0'
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
+    androidTestImplementation platform('androidx.compose:compose-bom:2026.04.01')
+    androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
 }

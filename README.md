@@ -1,25 +1,154 @@
-# HTTP Rest - Android App
+# Android HTTP REST Client
 
-Development Overview -> *Native Android App – Java, XML, SQLite, Apache, MySQL, PHP*
+Android HTTP REST Client is a modern Android application for manually testing HTTP endpoints from an Android device. The project has been refactored from a legacy XML/AppCompat implementation into a Jetpack Compose application using Material 3, a dark theme, and an MVI-style presentation layer.
 
-It’s an HTTP/REST client app.
+The behavior: choose an HTTP method, enter a URL, optionally add headers, optionally add variables, optionally include the current device latitude and longitude, optionally Base64-encode outgoing values, send the request, and review the response details.
 
-I needed a tool to help me test some REST api calls, so I've created this app.
+## Technical summary
 
-I used native Java and XML layouts to develop this project, and I’ve created all image assets using Corel Draw.
+| Area | Implementation |
+| --- | --- |
+| UI toolkit | Jetpack Compose |
+| Design system | Material 3 |
+| Theme | Dark theme by default |
+| Architecture | MVI-style state, intent, and effect contracts |
+| State holder | AndroidViewModel with StateFlow and SharedFlow |
+| Persistence | SQLiteOpenHelper-backed local database |
+| HTTP stack | HttpURLConnection wrapped inside a repository |
+| Location | Google Play Services Fused Location Provider |
+| Gradle | Gradle wrapper 9.4.1 |
+| Android Gradle Plugin | 9.2.0 |
+| Kotlin / Compose plugin | org.jetbrains.kotlin.plugin.compose 2.3.20 |
+| SDK | compileSdk 36, targetSdk 36, minSdk 23 |
 
-You can add variables and headers, including an option to automatically appending your GPS location to the variables. In return, you get a generous summary with a detailed summary, along with timeframe, headers, byte size and so forth.
+## Project structure
 
-It uses SQLite to store any entered data, so to remember for future usage. Multithreaded approach, so to prevent ANR.
+```text
+.
+├── app
+│   ├── build.gradle
+│   ├── proguard-rules.pro
+│   └── src
+│       ├── androidTest
+│       ├── main
+│       │   ├── AndroidManifest.xml
+│       │   ├── assets
+│       │   ├── java/com/http_s/rest
+│       │   │   ├── MainActivity.kt
+│       │   │   ├── Utilities.kt
+│       │   │   ├── data
+│       │   │   │   └── SqliteCore.kt
+│       │   │   ├── location
+│       │   │   │   └── LocationHelper.kt
+│       │   │   ├── mvi
+│       │   │   │   ├── HttpRestContract.kt
+│       │   │   │   └── HttpRestViewModel.kt
+│       │   │   ├── repository
+│       │   │   │   └── HttpRestRepository.kt
+│       │   │   └── ui
+│       │   │       ├── HttpRestScreen.kt
+│       │   │       └── Theme.kt
+│       │   └── res
+│       └── test
+├── build.gradle
+├── gradle.properties
+├── gradle/wrapper/gradle-wrapper.properties
+└── settings.gradle
+```
 
-This was quite a fun project to work on, besides, it makes my daily job that much easier too.
+Material 3 components used include `Scaffold`, `TopAppBar`, `ElevatedCard`, `OutlinedTextField`, `Button`, `OutlinedButton`, `FilledTonalButton`, `Switch`, `AssistChip`, `AlertDialog`, and progress indicators.
 
-[Play Store -> HTTP REST](https://play.google.com/store/apps/details?id=com.http_s.rest)
+## MVI architecture
 
-![01](https://user-images.githubusercontent.com/28379115/184137708-b574734f-6f71-4884-807d-2ba11c690b43.jpg)
-![02](https://user-images.githubusercontent.com/28379115/184137717-4066e2fd-ea39-4ea8-816d-cfd8cfa87fe9.jpg)
-![03](https://user-images.githubusercontent.com/28379115/184137719-833061bc-c23d-4c43-bacc-863f258e3370.jpg)
-![04](https://user-images.githubusercontent.com/28379115/184137725-a1f1cfaa-bccb-4273-8d38-0751da690beb.jpg)
-![05](https://user-images.githubusercontent.com/28379115/184137727-a7e7ba3a-1c14-417a-915c-cf76a7050218.jpg)
-![06](https://user-images.githubusercontent.com/28379115/184137731-9bd0e907-eace-4f07-b14a-6cdd4e7a0e49.jpg)
-![07](https://user-images.githubusercontent.com/28379115/184137734-d5ed4981-718a-4850-8ebb-03237bb39278.jpg)
+The presentation layer is split into state, intents, effects, and a ViewModel.
+
+### Effects
+
+`HttpRestEffect` is used for one-time events that should not be stored as durable screen state. The current effect is `RequestLocationPermission`, which is collected by `MainActivity` and handled by the Activity Result API.
+
+### ViewModel
+
+`HttpRestViewModel` owns the MVI reducer logic. It exposes:
+
+| Flow | Purpose |
+| --- | --- |
+| `state: StateFlow<HttpRestState>` | The current UI state observed by Compose |
+| `effects: SharedFlow<HttpRestEffect>` | One-time side effects observed by `MainActivity` |
+
+The ViewModel is responsible for loading persisted state, updating headers and variables, persisting settings, requesting location refreshes, starting HTTP requests, cancelling active requests, and publishing success/error state.
+
+## Data layer
+
+### Repository
+
+`HttpRestRepository` is the data and networking boundary for the app. It coordinates:
+
+| Responsibility | Details |
+| --- | --- |
+| Settings access | Reads and writes persisted app settings through `SqliteCore` |
+| Header/variable persistence | Loads and replaces saved key/value request fields |
+| Asset loading | Reads `privacy_policy.txt` from assets |
+| Request execution | Sends HTTP requests using `HttpURLConnection` on `Dispatchers.IO` |
+| Request metadata | Stores request/response timestamps and HTTP metadata in SQLite |
+| Query/body formatting | Builds URL-encoded request variables and applies optional Base64 encoding |
+| Location injection | Adds `LATITUDE` and `LONGITUDE` when the location setting is enabled |
+
+### SQLite storage
+
+`SqliteCore` keeps the original lightweight SQLite approach. It uses two tables:
+
+| Table | Columns | Purpose |
+| --- | --- | --- |
+| `settings` | `setting_name`, `setting_value` | Stores settings, request metadata, and latest location values |
+| `headers_variables` | `field_type`, `field_name`, `field_value` | Stores saved header and variable rows |
+
+The data layer keeps the existing database name, `httprest.db`, and version `2`.
+
+## HTTP behavior
+
+The app supports these methods:
+
+```text
+GET, POST, OPTIONS, HEAD, PUT, DELETE, TRACE
+```
+
+For `GET` requests, variables are appended to the URL query string. For `POST`, `PUT`, and `DELETE`, variables are written as an `application/x-www-form-urlencoded` request body when variables are present.
+
+Default request headers include:
+
+```text
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Content-Language: en-US
+```
+
+User-entered headers are added after the default headers. Blank header names are ignored.
+
+The response dialog displays a formatted JSON object with:
+
+| JSON field | Meaning |
+| --- | --- |
+| `response_code` | Numeric HTTP response code |
+| `response_code_description` | Legacy descriptive HTTP label |
+| `response_code_message` | Response message from the connection |
+| `response_message` | Response body text |
+| `headers` | Response headers |
+
+## Location behavior
+
+`LocationHelper` uses `FusedLocationProviderClient` and requests high-accuracy location updates. `MainActivity` handles runtime location permission requests through `ActivityResultContracts.RequestMultiplePermissions`.
+
+When location injection is enabled in settings, the repository adds two outgoing variables:
+
+```text
+LATITUDE=<last saved latitude>
+LONGITUDE=<last saved longitude>
+```
+
+The latest location values are persisted in SQLite so they can be reused by the request layer.
+
+The header and variable enabled switches are persisted using:
+
+```text
+CHECKED_HEADERS_CHECKBOX
+CHECKED_VARIABLES_CHECKBOX
+```
